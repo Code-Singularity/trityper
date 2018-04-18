@@ -105,6 +105,7 @@ $(document).ready(function(){
 		$("div#content").hide();
 		var type1 = $("#def_type1").val();
 		var type2 = $("#def_type2").val();
+		var type3 = $("#def_type3").val();
 		var ability = $("#def_ability").val();
 		var weather = $("#def_weather").val();
 		var color = new Array();
@@ -116,7 +117,7 @@ $(document).ready(function(){
 		{
 			for (i=0; i<=18; i++)
 			{
-				result[i] = ((types[i][type1] * types[i][type2]) * abilities[ability][i]) * weathers[weather][i];
+				result[i] = ((types[i][type1] * types[i][type2] * types[i][type3]) * abilities[ability][i]) * weathers[weather][i];
 				if((types[i][type1] * types[i][type2]) < 2 && ability == 10){result[i] = 0};
 				if((types[i][type1] * types[i][type2]) >= 2 && ability == 9){result[i] = result[i] * 0.75};
 				if(result[i] == 1){color[i] = "dmg_normal"};
@@ -143,7 +144,7 @@ $(document).ready(function(){
 		}
 		else
 		{
-			$("div#content").empty().append("Type 1 and Type 2 must be different").show("slow");
+			$("div#content").empty().append("Types must be different").show("slow");
 		}
 	});
 });
@@ -197,6 +198,28 @@ $(document).ready(function(){
 	<option value="15">Dark</option>
 	<option value="16">Steel</option>
 	<option value="17">Fairy</option>
+	</select><br>
+	
+	Type 3: <select id="def_type3">
+	<option value="18">None</option>
+	<option value="0">Normal</option>
+	<option value="1">Fire</option>
+	<option value="2">Water</option>
+	<option value="3">Electric</option>
+	<option value="4">Grass</option>
+	<option value="5">Ice</option>
+	<option value="6">Fighting</option>
+	<option value="7">Poison</option>
+	<option value="8">Ground</option>
+	<option value="9">Flying</option>
+	<option value="10">Psychic</option>
+	<option value="11">Bug</option>
+	<option value="12">Rock</option>
+	<option value="13">Ghost</option>
+	<option value="14">Dragon</option>
+	<option value="15">Dark</option>
+	<option value="16">Steel</option>
+	<option value="17">Fairy</option>
 	</select><br><br>
 </div>
 <div class="column">
@@ -225,8 +248,6 @@ $(document).ready(function(){
 <input type="submit" id="submit" value="Submit"><br><br>
 
 <div id="content"></div><br><br>
-
-<a href="index.html">&lt;&lt; Back to Ikewise's Site</a>
 
 </body>
 </html>
