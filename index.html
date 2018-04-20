@@ -95,7 +95,8 @@ var abilities = new Array(
 
 var weathers = new Array(
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// None
-[1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Drought
+[1, 1.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Harsh Sunlight
+[1, 1.5, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],// Extremely Harsh Sunlight
 [1, 0.5, 1.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);// Drizzle
 
 $(document).ready(function(){
@@ -240,7 +241,8 @@ $(document).ready(function(){
 <div class="column">
 	Weather: <select id="def_weather">
 	<option value="0">None</option>
-	<option value="1">Drought</option>
+	<option value="1">Harsh Sunlight</option>
+	<option value="2">Extremely Harsh Sunlight</option>
 	<option value="2">Drizzle</option>
 	</select>
 </div>
